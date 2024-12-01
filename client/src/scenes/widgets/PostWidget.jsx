@@ -4,7 +4,7 @@ import {
   FavoriteOutlined,
   ShareOutlined,
 } from "@mui/icons-material";
-import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Divider, IconButton, Typography, useTheme, InputBase,Button } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
@@ -94,6 +94,29 @@ const PostWidget = ({
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">
+          <FlexBetween gap="1rem">
+          <InputBase
+          placeholder="Write your comment"
+          sx={{
+            width: "100%",
+            backgroundColor: palette.neutral.light,
+            borderRadius: "2rem",
+            padding: "0.5rem 0.5rem",
+          }}
+        />
+          <Button
+         
+          sx={{
+            color: palette.background.alt,
+            backgroundColor: palette.primary.main,
+            borderRadius: "1rem",
+            padding: "0.5rem 0.5rem",
+          }}
+        >
+          Comment
+        </Button>
+          </FlexBetween>
+          
           {comments.map((comment, i) => (
             <Box key={`${name}-${i}`}>
               <Divider />
